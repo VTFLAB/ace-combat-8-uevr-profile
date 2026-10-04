@@ -1,0 +1,15 @@
+{
+    "child_name": "WBP_ChroniclePersistent",
+    "child_x": 675.0,
+    "child_y": 0.0,
+    "roots": {
+        "WBP_HUD_Chronicle_MainFlight_000_C": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "WBP_HUD_Chronicle_Parts_NoGlow_000_C": {
+            "x": 0.0,
+            "y": 0.0
+        }
+    }
+}

@@ -1,0 +1,5 @@
+*.txt  text eol=crlf
+*.lua  text
+*.json text
+*.md   text
+*.zip  binary
