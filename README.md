@@ -18,7 +18,7 @@ ACE COMBAT 8 を [UEVR](https://github.com/praydog/UEVR-nightly/releases) で VR
 | ACE COMBAT 8（Steam 版） | — |
 | UEVR nightly（01143 以降推奨） | <https://github.com/praydog/UEVR-nightly/releases> |
 | `ac8_ui_fix.lua`（HUD を VR に出すスクリプト） | <https://github.com/lovezzzxxx/ace-combat-8-uevr-ui-fix>（作者: lovezzzxxx 氏） |
-| このリポジトリの `AceCombat8.zip` | このページ上部の `AceCombat8.zip` |
+| このリポジトリの `AceCombat8.zip` | [Releases](https://github.com/VTFLAB/ace-combat-8-uevr-profile/releases/latest) からダウンロード |
 
 > `ac8_ui_fix.lua` はライセンス表記がないため同梱していません。必ず作者のリポジトリから入手してください。
 
@@ -170,7 +170,7 @@ UEVR profile for **ACE COMBAT 8** that makes the green flight HUD (center instru
 **Install**
 
 1. Back up your existing profile with **Export Config** in UEVRInjector (it will be overwritten).
-2. Download `AceCombat8.zip` (**do not rename it** — UEVR uses the zip file name as the game name).
+2. Download `AceCombat8.zip` from [Releases](https://github.com/VTFLAB/ace-combat-8-uevr-profile/releases/latest) (**do not rename it** — UEVR uses the zip file name as the game name).
 3. UEVRInjector → **Import Config** → select `AceCombat8.zip`.
 4. Put `ac8_ui_fix.lua` into `%APPDATA%\UnrealVRMod\AceCombat8\scripts\`.
 5. Launch the game, select `AceCombat8.exe`, choose OpenXR, **Inject**.
