@@ -163,7 +163,22 @@ UEVR メニュー → **LuaLoader → Main** の "Known scripts" に 2 つとも
 
 - **OpenXR Resolution Scale**（VR → Runtime）: GPU に余裕があれば上げられます。
   ミッション再開時などにクラッシュする場合は下げてください。
-- GPU ドライバーは最新にしておくことをおすすめします。
+- **GPU ドライバーは「最新」ではなく、ゲームが指定する推奨バージョンを使ってください**（下記）。
+
+<a id="gpu-driver"></a>
+### GPU ドライバー（重要）
+
+公式（Steam のお知らせ「[Product Notice](https://store.steampowered.com/news/app/2288340)」2026-09-29）では、クラッシュ対策として
+**ゲーム起動時に表示される推奨グラフィックドライバーを使う**よう案内されています。
+推奨と異なるドライバーだと、起動時に「AMDのグラフィックドライバーの最新バージョンにはD3D12の既知の問題があります」のような警告が出ます。
+
+| GPU | 推奨ドライバー | 根拠 |
+|---|---|---|
+| AMD Radeon | **AMD Software: Adrenalin Edition 26.3.1** | ゲーム起動時の警告で指定される版（動作確認環境もこの版） |
+| NVIDIA GeForce | ゲーム起動時に表示される版 | 公式に具体的な版数の公開を確認できていません |
+
+- **Radeon で最新ドライバー（26.9.2 など）に上げると、起動時に警告が出ます。** 26.3.1 は AMD 公式の [リリースノート](https://www.amd.com/en/resources/support-articles/release-notes/RN-RAD-WIN-26-3-1.html) から入手できます。
+- 公式はあわせて、**インストール先 SSD に 16GB 以上の空き**と、**Windows の仮想メモリを有効にしておく**ことを推奨しています。
 
 ---
 
@@ -174,7 +189,7 @@ UEVR メニュー → **LuaLoader → Main** の "Known scripts" に 2 つとも
 | HUD がまったく見えない | `ac8_ui_fix.lua` が `scripts\` にあるか、LuaLoader → Main の Known scripts に出ているか確認 |
 | HUD が巨大で画面中央に貼り付き、UI 設定が効かない | **Extreme Compatibility Mode を OFF** にしてゲームを再起動 |
 | 中央計器がミニマップと被る | Script UI の Child widget **X** を調整 |
-| ミッション再開 / 終了時にクラッシュ（「予期しないエラー（エラー01）」） | Resolution Scale を下げる、GPU ドライバー更新。Steam 起動オプションに `-dred` を付けるとクラッシュ原因が記録されます |
+| ミッション再開 / 終了時にクラッシュ（「予期しないエラー（エラー01）」） | ゲーム指定の**推奨ドライバー**を使う（[上記](#gpu-driver)）、SSD 空き 16GB 以上・仮想メモリ有効を確認、Resolution Scale を下げる。Steam 起動オプションに `-dred` を付けるとクラッシュ原因が記録されます |
 | ピッチラダーの一部や機銃照準が見えない | `ac8_ui_fix.lua` の既知の制限です |
 
 ---
@@ -221,5 +236,8 @@ Launch from Steam as usual when you want to play online. Do not delete or modify
 - `ac8_hud_adjust.lua` shifts only the center instrument cluster (`WBP_ChroniclePersistent`) by X=675 so it no longer overlaps the minimap.
   Tune it in UEVR menu → LuaLoader → **Script UI** → Child widget **X** (may differ per headset).
 - OpenXR Resolution Scale is 0.796 for stability on a 12 GB GPU; raise it if you have headroom, lower it if the game crashes on mission restart.
+- **GPU driver: use the version the game recommends at launch, not the latest.** The official Steam "Product Notice" (2026-09-29) advises using the recommended driver shown at launch, plus 16 GB+ free on the install SSD and Windows virtual memory enabled.
+  - AMD Radeon: **Adrenalin 26.3.1** (named by the in-game warning; newer drivers such as 26.9.2 trigger a "known D3D12 issue" warning).
+  - NVIDIA: use the version shown at launch (no official version number confirmed).
 
 Tested: UEVR nightly 01143 (`1.05+195-4ee5c6b6`), Windows 11, Radeon RX 6700 XT, Virtual Desktop (OpenXR).
