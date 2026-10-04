@@ -11,6 +11,34 @@ ACE COMBAT 8 を [UEVR](https://github.com/praydog/UEVR-nightly/releases) で VR
 
 ---
 
+<a id="launch"></a>
+## ⚠️ はじめに必ず：アンチチートを通さずに起動する
+
+AC8 を Steam から普通に起動すると、アンチチート（EasyAntiCheat）経由で起動されるため **UEVR を注入できません**。
+UEVR を使うときは、次の手順で **`AceCombat8.exe` を直接起動**します。
+
+1. AC8 のインストール先を開き、次のフォルダに移動します。
+   ```
+   <Steamライブラリ>\steamapps\common\ACE COMBAT 8\Game\Binaries\Win64
+   ```
+   例: `D:\SteamLibrary\steamapps\common\ACE COMBAT 8\Game\Binaries\Win64`
+   （Steam でゲームを右クリック → **管理 → ローカルファイルを閲覧** で `ACE COMBAT 8` フォルダが開きます）
+2. そのフォルダに **`steam_appid.txt`** というテキストファイルを作成します。
+3. 中身に次の数字だけを入力して保存します（AC8 の Steam App ID）。
+   ```
+   2288340
+   ```
+   > 拡張子が `steam_appid.txt.txt` になっていないか注意してください（エクスプローラーの「表示 → ファイル名拡張子」をオンにすると確認できます）。
+4. 以降は **同じフォルダの `AceCombat8.exe` をダブルクリックして起動**します（Steam クライアントは起動したままにしておきます）。
+
+**注意**
+
+- この方法ではアンチチートが無効になるため、**マルチプレイ（オンライン対戦）は利用できません**。UEVR はキャンペーンなどのオフラインモード専用です。
+- マルチプレイを遊ぶときは、いつも通り **Steam から起動**してください（`steam_appid.txt` は置いたままで問題ありません）。
+- `EasyAntiCheat` フォルダや `start_protected_game.exe` は削除・改変しないでください。
+
+---
+
 ## 必要なもの
 
 | もの | 入手先 |
@@ -27,7 +55,7 @@ ACE COMBAT 8 を [UEVR](https://github.com/praydog/UEVR-nightly/releases) で VR
 ## UEVR の基本的な使い方（はじめての人向け）
 
 1. UEVR nightly の zip を好きなフォルダに展開します（例: `D:\uevr`）。
-2. **ACE COMBAT 8 を起動**し、タイトル画面まで進めます。
+2. [上の手順](#launch)どおり **`AceCombat8.exe` を直接起動**し、タイトル画面まで進めます（Steam から起動すると注入できません）。
 3. `UEVRInjector.exe` を起動します。
 4. プロセス一覧から **`AceCombat8.exe`** を選びます。
 5. ランタイムで **OpenXR** を選びます（Virtual Desktop / Quest Link / SteamVR いずれも OpenXR で可）。
@@ -167,13 +195,25 @@ UEVR profile for **ACE COMBAT 8** that makes the green flight HUD (center instru
 **Requirements**: UEVR nightly 01143+, and `ac8_ui_fix.lua` from
 <https://github.com/lovezzzxxx/ace-combat-8-uevr-ui-fix> (not bundled — no license).
 
+**⚠️ First: launch without the anti-cheat**
+
+Launching from Steam goes through EasyAntiCheat, and UEVR cannot inject. To use UEVR:
+
+1. Open `<Steam library>\steamapps\common\ACE COMBAT 8\Game\Binaries\Win64`
+   (Steam → right-click the game → Manage → Browse local files).
+2. Create `steam_appid.txt` there containing only `2288340` (make sure it is not `steam_appid.txt.txt`).
+3. Launch **`AceCombat8.exe` directly** from that folder (keep the Steam client running).
+
+Anti-cheat is disabled this way, so **multiplayer is not available** — UEVR is for offline modes only.
+Launch from Steam as usual when you want to play online. Do not delete or modify `EasyAntiCheat` / `start_protected_game.exe`.
+
 **Install**
 
 1. Back up your existing profile with **Export Config** in UEVRInjector (it will be overwritten).
 2. Download `AceCombat8.zip` from [Releases](https://github.com/VTFLAB/ace-combat-8-uevr-profile/releases/latest) (**do not rename it** — UEVR uses the zip file name as the game name).
 3. UEVRInjector → **Import Config** → select `AceCombat8.zip`.
 4. Put `ac8_ui_fix.lua` into `%APPDATA%\UnrealVRMod\AceCombat8\scripts\`.
-5. Launch the game, select `AceCombat8.exe`, choose OpenXR, **Inject**.
+5. Launch `AceCombat8.exe` directly (see above), then in UEVRInjector select `AceCombat8.exe`, choose OpenXR, **Inject**.
 
 **Key points**
 
