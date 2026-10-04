@@ -1,5 +1,15 @@
 # ACE COMBAT 8 UEVR Profile (HUD fix)
 
+> [!CAUTION]
+> **自己責任でご利用ください。**
+> UEVR を使うには、アンチチート（EasyAntiCheat）を通さずにゲームを起動し、ゲームのプロセスに外部 DLL を注入します。
+> これはゲームの想定外の使い方であり、**仕様上、アカウント停止（BAN）などの措置を受ける可能性を否定できません。**
+> このプロファイル・スクリプトの利用によって生じたいかなる損害についても、作者は責任を負いません。
+>
+> **Use at your own risk.** UEVR requires launching the game without its anti-cheat (EasyAntiCheat) and injecting an external DLL into the game process.
+> This is not an intended way to play, and **an account ban or other action cannot be ruled out.**
+> The author takes no responsibility for any damage resulting from the use of this profile or scripts.
+
 ACE COMBAT 8 を [UEVR](https://github.com/praydog/UEVR-nightly/releases) で VR 化したときに、
 **緑の飛行 HUD（中央計器・左下ミニマップ・右下の兵装 / 機体状態）が VR で見えない**問題を解決した UEVR プロファイルです。
 
