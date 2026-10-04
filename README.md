@@ -57,6 +57,7 @@ UEVR を使うときは、次の手順で **`AceCombat8.exe` を直接起動**�
 1. UEVR nightly の zip を好きなフォルダに展開します（例: `D:\uevr`）。
 2. **VR ヘッドセットを PC に接続**し、PC VR として使える状態にしておきます（Virtual Desktop / Quest Link / Air Link / SteamVR など）。
    ゲームを起動する前に接続を済ませておいてください。
+   > ⚠️ **Virtual Desktop を使う場合、SteamVR の起動は不要です。** Virtual Desktop で PC に接続した状態のまま進めてください。
 3. [上の手順](#launch)どおり **`AceCombat8.exe` を直接起動**し、タイトル画面まで進めます（Steam から起動すると注入できません）。
 4. `UEVRInjector.exe` を起動します。
 5. プロセス一覧から **`AceCombat8.exe`** を選びます。
@@ -237,6 +238,7 @@ Anti-cheat is disabled this way, so **multiplayer is not available** — UEVR is
 Launch from Steam as usual when you want to play online. Do not delete or modify `EasyAntiCheat` / `start_protected_game.exe`.
 
 **Before you start**: connect your VR headset to the PC as a PC VR device (Virtual Desktop / Quest Link / Air Link / SteamVR, etc.) before launching the game.
+⚠️ **With Virtual Desktop, you do not need to start SteamVR** — just stay connected through Virtual Desktop.
 
 **In-game graphics settings**: turn **OFF** Motion Blur, Bloom, HDR and VSync. Frame rate limit is up to you.
 
